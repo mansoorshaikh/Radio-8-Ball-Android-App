@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+	<item android:id="@+id/social"
+		  android:icon="@drawable/ic_menu_share"
+	      android:title="@string/main_menu_share" />
+	<item android:id="@+id/history"
+		  android:icon="@drawable/ic_menu_history"
+	      android:title="@string/main_menu_history" />
+	<item android:id="@+id/options"
+		  android:icon="@drawable/ic_menu_options"
+	      android:title="@string/main_menu_options" />
+	<item android:id="@+id/about"
+		  android:icon="@drawable/ic_menu_about"
+	      android:title="@string/main_menu_about" />	      	      
+</menu>

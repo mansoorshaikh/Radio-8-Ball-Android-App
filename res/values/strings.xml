@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title">Radio 8 Ball</string>
+    <string name="app_name">Radio 8 Ball</string>
+	<string name="ask_button">Consult the Oracle!!!</string>
+	
+	<string name="main_menu_share">Social Media</string>
+	<string name="main_menu_history">History</string>
+	<string name="main_menu_options">Options</string>
+	<string name="main_menu_about">About</string>
+	
+	<string name="question_prompt">Type A Question &amp; Give Us A Shake</string>
+	<string name="shake_button">Shake!</string>
+	
+	<string name="song_player_heading">Thank you for consulting the Pop Oracle. Your answer is divined.</string>
+	
+	<string name="about_text">
+		The Pop Oracle is a musical divination format where questions are answered by
+		picking songs at random and interpreting the randomly chosen songs as the answer
+		to the question, like picking musical tarot cards. Give us a shake!
+	</string>
+	<string name="copyright_text">
+		Concept by Andras Jones\n
+		Design by Gorilla Gizmos\n
+		contact@gorillagizmos.com\n
+		Copyright 2010
+	</string>
+</resources>

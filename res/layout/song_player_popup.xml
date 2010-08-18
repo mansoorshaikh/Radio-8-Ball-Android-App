@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="8dip"
+    >
+	<TextView  
+	    android:layout_width="fill_parent" 
+	    android:layout_height="wrap_content" 
+	    android:text="@string/song_player_heading"
+	    />
+	    
+	<LinearLayout
+		android:id="@+id/song_info"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="10px"
+		android:orientation="vertical"
+		android:layout_gravity="center_horizontal"
+		>
+		<TextView
+			android:id="@+id/song_title"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Song Title"
+			android:textSize="22sp"
+			/>
+		<TextView
+			android:id="@+id/song_artist"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:text="by Artist"
+			android:textSize="18sp"
+			/>
+	</LinearLayout>
+
+	<LinearLayout
+		android:id="@+id/song_options"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="10px"
+		>
+		<Button
+			android:id="@+id/share_button"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_weight="2"
+			android:text="Share with a Friend"
+			/>
+		<Button
+			android:id="@+id/buy_button"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:text="Buy the MP3"
+			/>
+		<Button
+			android:id="@+id/ask_another_button"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_weight="2"
+			android:text="Ask another Question"
+			/>
+	</LinearLayout>
+	       
+</LinearLayout>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    >
+	<LinearLayout
+	    android:orientation="vertical"
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:padding="6dip"
+	    >
+	    
+	    <TextView  
+		    android:layout_width="fill_parent" 
+		    android:layout_height="wrap_content"
+		    android:paddingBottom="10dip"
+		    android:textStyle="bold"
+		    android:gravity="center_horizontal"
+		    android:text="Share your question and song with a friend"
+		    /> 
+	    
+	    <TextView  
+		    android:layout_width="fill_parent" 
+		    android:layout_height="wrap_content" 
+		    android:text="Your Name"
+		    />    
+	    <EditText
+	    	android:id="@+id/sender_name"
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	/>
+	    	
+	    <TextView  
+		    android:layout_width="fill_parent" 
+		    android:layout_height="wrap_content" 
+		    android:text="Friend's Name"
+		    />    
+	    <EditText
+	    	android:id="@+id/friend_name"
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	/>
+	    
+	    <TextView  
+		    android:layout_width="fill_parent" 
+		    android:layout_height="wrap_content" 
+		    android:text="Friend's Email"
+		    />    
+	    <EditText
+	    	android:id="@+id/friend_email"
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	/>
+	    
+	    <TextView  
+		    android:layout_width="fill_parent" 
+		    android:layout_height="wrap_content" 
+		    android:text="Confirm Friend's Email"
+		    />    
+	    <EditText
+	    	android:id="@+id/confirm_friend_email"
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	/>
+	    
+	    <TextView  
+		    android:layout_width="fill_parent" 
+		    android:layout_height="wrap_content" 
+		    android:text="Personal Message"
+		    />    
+	    <EditText
+	    	android:id="@+id/personal_message"
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:lines="4"
+	    	/>
+	    
+	    <Button
+	    	android:id="@+id/share_submit_button"
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:layout_gravity="left"
+	    	android:text="Send"
+	    	/>
+	    
+	</LinearLayout>
+</ScrollView>
