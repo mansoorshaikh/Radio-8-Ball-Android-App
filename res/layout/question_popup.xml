@@ -8,7 +8,7 @@
 	<TextView  
 	    android:layout_width="fill_parent" 
 	    android:layout_height="wrap_content" 
-	    android:text="@string/question_prompt"
+	    android:text="Type A Question &amp; Give Us A Shake"
 	    android:paddingBottom="4dip"
 	    />
 	    
@@ -16,13 +16,6 @@
     	android:id="@+id/question_input"
     	android:layout_width="fill_parent"
     	android:layout_height="wrap_content"
-    	/>
-    
-    <Button
-    	android:id="@+id/shake_button"
-    	android:layout_width="fill_parent"
-    	android:layout_height="wrap_content"
-    	android:text="@string/shake_button"
     	/>
     
 </LinearLayout>

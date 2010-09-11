@@ -55,6 +55,7 @@ public class SongPlayerPopup extends Activity {
 	
 	private OnClickListener anotherQuestionButtonListener = new OnClickListener() {
 	    public void onClick(View v) {
+	    	finish();
 	    	Intent anotherQuestionIntent = new Intent(SongPlayerPopup.this, QuestionPopup.class);
 			SongPlayerPopup.this.startActivity(anotherQuestionIntent);
 	    }
