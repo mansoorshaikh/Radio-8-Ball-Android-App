@@ -1,13 +1,19 @@
 package com.gorillagizmos.radio8ball;
 
+import java.io.IOException;
+
 import android.app.Activity;
 import android.content.Intent;
+import android.media.MediaPlayer;
+import android.media.MediaPlayer.OnPreparedListener;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
 public class SongPlayerPopup extends Activity {
+	private MediaPlayer mp;
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -18,6 +24,26 @@ public class SongPlayerPopup extends Activity {
         
         Button anotherQuestionButton = (Button) findViewById(R.id.ask_another_button);
         anotherQuestionButton.setOnClickListener(anotherQuestionButtonListener);
+        
+        mp = new MediaPlayer();
+        mp.setOnPreparedListener(onPreparedListener());
+        try {
+        	mp.setDataSource("http://radio8ball.com/files/audio/R8B1150AM-20090923-FarewellKKNW-mono.mp3");
+        } catch (IllegalArgumentException ex) {
+        	System.out.println("setDataSource() throws IllegalArgumentException");
+        } catch (IOException ex) {
+        	System.out.println("setDataSource() throws IOException");
+        }
+        try {
+        	mp.prepareAsync();
+        } catch (IllegalStateException ex) {
+        	System.out.println("prepareAsync() throws IllegalStateException");
+        }
+	}
+	
+	private OnPreparedListener onPreparedListener() {
+		mp.start();
+		return null;
 	}
 	
 	private OnClickListener shareButtonListener = new OnClickListener() {
