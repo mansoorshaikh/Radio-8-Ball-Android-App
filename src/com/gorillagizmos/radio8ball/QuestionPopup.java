@@ -8,6 +8,9 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 
 public class QuestionPopup extends Activity {
 	private SensorManager mSensorManager;
@@ -41,6 +44,9 @@ public class QuestionPopup extends Activity {
 		super.onCreate(savedInstanceState);
         setContentView(R.layout.question_popup);
         
+        Button shakeButton = (Button) findViewById(R.id.shake_button);
+        shakeButton.setOnClickListener(shakeButtonListener);
+        
         mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         mSensorManager.registerListener(mSensorListener, mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER), SensorManager.SENSOR_DELAY_NORMAL);
         mAccel = 0.00f;
@@ -66,4 +72,11 @@ public class QuestionPopup extends Activity {
 		mSensorManager.unregisterListener(mSensorListener);
 		super.onStop();
 	}
+	
+	private OnClickListener shakeButtonListener = new OnClickListener() {
+	    public void onClick(View v) {
+	    	Intent songPlayerIntent = new Intent(QuestionPopup.this, SongPlayerPopup.class);
+	    	QuestionPopup.this.startActivity(songPlayerIntent);
+	    }
+	};
 }
