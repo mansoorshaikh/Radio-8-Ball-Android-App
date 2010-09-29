@@ -27,12 +27,15 @@ public class SongPlayerPopup extends Activity {
         
         mp = new MediaPlayer();
         mp.setOnPreparedListener(onPreparedListener());
+        
         try {
         	mp.setDataSource("http://radio8ball.com/files/audio/R8B1150AM-20090923-FarewellKKNW-mono.mp3");
         } catch (IllegalArgumentException ex) {
-        	System.out.println("setDataSource() throws IllegalArgumentException");
+        	ex.printStackTrace();
+        } catch (IllegalStateException ex) {
+        	ex.printStackTrace();
         } catch (IOException ex) {
-        	System.out.println("setDataSource() throws IOException");
+        	ex.printStackTrace();
         }
         try {
         	mp.prepareAsync();
