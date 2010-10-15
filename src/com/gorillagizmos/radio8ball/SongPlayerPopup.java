@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class SongPlayerPopup extends Activity {
 	private MediaPlayer mp;
@@ -19,17 +20,22 @@ public class SongPlayerPopup extends Activity {
 		super.onCreate(savedInstanceState);
         setContentView(R.layout.song_player_popup);
         
+        TextView songTitleTextView = (TextView) findViewById(R.id.song_title);
+        TextView songArtistTextView = (TextView) findViewById(R.id.song_artist);
         Button shareButton = (Button) findViewById(R.id.share_button);
-        shareButton.setOnClickListener(shareButtonListener);
-        
         Button anotherQuestionButton = (Button) findViewById(R.id.ask_another_button);
+        
+        songTitleTextView.setText(QuestionPopup.soapClient.getSongTitle());
+        songArtistTextView.setText(QuestionPopup.soapClient.getSongArtist());
+        
+        shareButton.setOnClickListener(shareButtonListener);
         anotherQuestionButton.setOnClickListener(anotherQuestionButtonListener);
         
         mp = new MediaPlayer();
         mp.setOnPreparedListener(onPreparedListener());
         
         try {
-        	mp.setDataSource("http://radio8ball.com/sites/all/themes/box_grey/upload/song/1233085537Dan%20Bern%20-%20Tiger%20Woods%20%28Live%20in%20Oly%2098%29.mp3");
+        	mp.setDataSource(QuestionPopup.soapClient.getSongFile());
         } catch (IllegalArgumentException ex) {
         	ex.printStackTrace();
         } catch (IllegalStateException ex) {

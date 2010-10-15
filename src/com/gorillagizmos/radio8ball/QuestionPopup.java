@@ -11,12 +11,17 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.EditText;
+
+import com.gorillagizmos.radio8ball.soapclient.*;
 
 public class QuestionPopup extends Activity {
 	private SensorManager mSensorManager;
 	private float mAccel; // acceleration apart from gravity
 	private float mAccelCurrent; // current acceleration including gravity
 	private float mAccelLast; // last acceleration including gravity
+	public static SoapClient soapClient;
+	private EditText questionInput;
 	
 	private final SensorEventListener mSensorListener = new SensorEventListener() {
 
@@ -44,6 +49,9 @@ public class QuestionPopup extends Activity {
 		super.onCreate(savedInstanceState);
         setContentView(R.layout.question_popup);
         
+        soapClient = new SoapClient();
+        
+        questionInput = (EditText) findViewById(R.id.question_input);
         Button shakeButton = (Button) findViewById(R.id.shake_button);
         shakeButton.setOnClickListener(shakeButtonListener);
         
@@ -75,8 +83,11 @@ public class QuestionPopup extends Activity {
 	
 	private OnClickListener shakeButtonListener = new OnClickListener() {
 	    public void onClick(View v) {
-	    	Intent songPlayerIntent = new Intent(QuestionPopup.this, SongPlayerPopup.class);
-	    	QuestionPopup.this.startActivity(songPlayerIntent);
+	    	Boolean querySuccessful = soapClient.query(questionInput.getText().toString());
+	    	if (querySuccessful) {
+	    		Intent songPlayerIntent = new Intent(QuestionPopup.this, SongPlayerPopup.class);
+		    	QuestionPopup.this.startActivity(songPlayerIntent);
+	    	}
 	    }
 	};
 }

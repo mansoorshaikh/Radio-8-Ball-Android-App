@@ -7,7 +7,7 @@ import org.ksoap2.transport.HttpTransportSE;
 
 import java.util.*;
 
-public class Soapclient {
+public class SoapClient {
 	
 	private static final String SOAP_ACTION = "urn:r8bwsdl:query";
     private static final String METHOD_NAME = "query";
@@ -20,12 +20,11 @@ public class Soapclient {
     String songalbum;
     String songfile;
     
-    public Soapclient() {
+    public SoapClient() {
     	
     }
     
-    public void query(String question) {
-    	
+    public boolean query(String question) {
     	try {
     		SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
     		request.addProperty("token",TOKEN);
@@ -42,14 +41,19 @@ public class Soapclient {
             Object result = envelope.getResponse();
 
             String results = (String) result;
-            StringTokenizer st = new StringTokenizer(results,"|");
-            this.songtitle = st.nextToken();
-            this.songartist = st.nextToken();
-            this.songalbum = st.nextToken();
-            this.songfile = st.nextToken();
-    		
+            if(results.length() == 0) {
+            	return false;
+            } else {
+            	StringTokenizer st = new StringTokenizer(results,"|");
+            	this.songtitle = st.nextToken();
+            	this.songartist = st.nextToken();
+            	this.songalbum = st.nextToken();
+            	this.songfile = st.nextToken();
+            	return true;
+            }
      	} catch (Exception e) {
-			
+     		System.out.println(e.toString());
+			return false;
 		}
     }
     
@@ -88,7 +92,7 @@ public class Soapclient {
     }
     
     public String getSongArtist() {
-    	return this.songtitle;
+    	return this.songartist;
     }
     
     public String getSongAlbum() {
