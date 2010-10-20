@@ -15,10 +15,10 @@ public class SoapClient {
     private static final String URL = "http://10.0.2.2/r8b_soap/index.php";
     private static final String TOKEN = "fd01fe934f26df17bac216e0c8f31af5";
     public String token;
-    String songtitle;
-    String songartist;
-    String songalbum;
-    String songfile;
+    private String songtitle;
+    private String songartist;
+    private String songalbum;
+    private String songfile;
     
     public SoapClient() {
     	
@@ -96,7 +96,7 @@ public class SoapClient {
     }
     
     public String getSongAlbum() {
-    	return this.songtitle;
+    	return this.songalbum;
     }
     
     public String getSongFile() {
