@@ -3,25 +3,21 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#02ACE5"
+    android:background="@drawable/home_bg"
     >
-	
-	<TextView  
-	    android:layout_width="fill_parent" 
-	    android:layout_height="wrap_content" 
-	    android:text="@string/title"
-	    />
+    
     <ImageView
     	android:layout_width="fill_parent"
     	android:layout_height="wrap_content"
     	android:scaleType="center"
     	android:src="@drawable/eight_ball"
+    	android:paddingTop="80px"
     	/>
+    	
     <Button
     	android:id="@+id/ask_button"
     	android:layout_width="wrap_content"
     	android:layout_height="wrap_content"
-    	android:layout_marginTop="10px"
     	android:layout_gravity="center"
     	android:text="@string/ask_button"
     	/>

@@ -3,7 +3,7 @@
       package="com.gorillagizmos.radio8ball"
       android:versionCode="1"
       android:versionName="1.0">
-    <application android:icon="@drawable/icon" android:label="@string/app_name" android:debuggable="true">
+    <application android:icon="@drawable/icon" android:label="@string/app_name" android:debuggable="true" android:theme="@android:style/Theme.NoTitleBar">
         <activity android:name=".Radio8Ball"
                   android:label="@string/app_name">
             <intent-filter>
