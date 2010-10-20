@@ -22,11 +22,13 @@ public class SongPlayerPopup extends Activity {
         
         TextView songTitleTextView = (TextView) findViewById(R.id.song_title);
         TextView songArtistTextView = (TextView) findViewById(R.id.song_artist);
+        TextView songAlbumTextView = (TextView) findViewById(R.id.song_album);
         Button shareButton = (Button) findViewById(R.id.share_button);
         Button anotherQuestionButton = (Button) findViewById(R.id.ask_another_button);
         
         songTitleTextView.setText(QuestionPopup.soapClient.getSongTitle());
-        songArtistTextView.setText(QuestionPopup.soapClient.getSongArtist());
+        songArtistTextView.setText("Artist: "+QuestionPopup.soapClient.getSongArtist());
+        songAlbumTextView.setText("Album: "+QuestionPopup.soapClient.getSongAlbum());
         
         shareButton.setOnClickListener(shareButtonListener);
         anotherQuestionButton.setOnClickListener(anotherQuestionButtonListener);

@@ -30,7 +30,14 @@
 			android:id="@+id/song_artist"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
-			android:text="by Artist"
+			android:text="Artist: Artist Name"
+			android:textSize="18sp"
+			/>
+		<TextView
+			android:id="@+id/song_album"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:text="Album: Album Name"
 			android:textSize="18sp"
 			/>
 	</LinearLayout>
