@@ -7,11 +7,11 @@
     >
     
     <ImageView
+    	android:id="@+id/eight_ball_image"
     	android:layout_width="fill_parent"
     	android:layout_height="wrap_content"
     	android:scaleType="center"
-    	android:src="@drawable/eight_ball"
-    	android:paddingTop="80px"
+    	android:layout_marginTop="80px"
     	/>
     	
     <Button

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false">
+    <item android:drawable="@drawable/eight_ball" android:duration="2000" />
+    
+    <item android:drawable="@drawable/eight_ball_bolt2" android:duration="50" />
+    
+    <item android:drawable="@drawable/eight_ball" android:duration="4000" />
+    
+    <item android:drawable="@drawable/eight_ball_bolt1" android:duration="50" />
+    <item android:drawable="@drawable/eight_ball_bolt2" android:duration="50" />
+    
+    <item android:drawable="@drawable/eight_ball" android:duration="750" />
+    
+    <item android:drawable="@drawable/eight_ball_bolt3" android:duration="100" />
+    
+    <item android:drawable="@drawable/eight_ball" android:duration="3000" />
+    
+    <item android:drawable="@drawable/eight_ball_bolt2" android:duration="50" />
+    <item android:drawable="@drawable/eight_ball_bolt3" android:duration="50" />
+    
+    <item android:drawable="@drawable/eight_ball" android:duration="3000" />
+    
+    <item android:drawable="@drawable/eight_ball_bolt1" android:duration="50" />
+</animation-list>
