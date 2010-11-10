@@ -85,8 +85,11 @@ public class QuestionPopup extends Activity {
 	    public void onClick(View v) {
 	    	Boolean querySuccessful = soapClient.query(questionInput.getText().toString());
 	    	if (querySuccessful) {
+	    		finish();
 	    		Intent songPlayerIntent = new Intent(QuestionPopup.this, SongPlayerPopup.class);
 		    	QuestionPopup.this.startActivity(songPlayerIntent);
+	    	} else {
+	    		// TODO: show a message like "Sorry, the Oracle can't seem to be reached right now..."
 	    	}
 	    }
 	};
