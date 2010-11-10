@@ -1,7 +1,9 @@
 package com.gorillagizmos.radio8ball;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -22,6 +24,7 @@ public class QuestionPopup extends Activity {
 	private float mAccelLast; // last acceleration including gravity
 	public static SoapClient soapClient;
 	private EditText questionInput;
+	private AlertDialog oracleBusyAlert;
 	
 	private final SensorEventListener mSensorListener = new SensorEventListener() {
 
@@ -48,6 +51,19 @@ public class QuestionPopup extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
         setContentView(R.layout.question_popup);
+        
+        // Create the "Oracle is busy" alert
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+        alertDialogBuilder.setMessage("Whoops! We're sorry, but the Pop Oracle seems to be distracted at the moment. Please try again later!")
+        	.setCancelable(true)
+        	.setNeutralButton("Ok", new DialogInterface.OnClickListener() {
+				public void onClick(DialogInterface dialog, int which) {
+					// Clicking the "Ok" button closes both the alert and the question popup
+					dialog.cancel();
+					finish();
+				}
+			});
+        oracleBusyAlert = alertDialogBuilder.create();
         
         soapClient = new SoapClient();
         
@@ -89,7 +105,7 @@ public class QuestionPopup extends Activity {
 	    		Intent songPlayerIntent = new Intent(QuestionPopup.this, SongPlayerPopup.class);
 		    	QuestionPopup.this.startActivity(songPlayerIntent);
 	    	} else {
-	    		// TODO: show a message like "Sorry, the Oracle can't seem to be reached right now..."
+	    		oracleBusyAlert.show();
 	    	}
 	    }
 	};
