@@ -7,8 +7,5 @@ gen
 ._.gitignore
 ._.project
 ._default.properties
-res/drawable/._ic_menu_about.png
-res/drawable/._ic_menu_history.png
-res/drawable/._ic_menu_options.png
-es/drawable/._ic_menu_share.png
+default.properties
 
