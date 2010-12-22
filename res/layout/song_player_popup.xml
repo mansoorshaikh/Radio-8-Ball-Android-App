@@ -24,21 +24,36 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:text="Song Title"
-			android:textSize="22sp"
+			android:textSize="20sp"
 			/>
 		<TextView
 			android:id="@+id/song_artist"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
 			android:text="Artist: Artist Name"
-			android:textSize="18sp"
+			android:textSize="16sp"
 			/>
 		<TextView
 			android:id="@+id/song_album"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
 			android:text="Album: Album Name"
-			android:textSize="18sp"
+			android:textSize="16sp"
+			/>
+	</LinearLayout>
+	
+	<LinearLayout
+		android:id="@+id/player_controls"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center_horizontal"
+		android:layout_marginTop="10px"
+		>
+		<Button
+			android:id="@+id/play_pause_button"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Pause"
 			/>
 	</LinearLayout>
 
