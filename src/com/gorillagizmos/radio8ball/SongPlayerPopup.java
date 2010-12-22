@@ -5,7 +5,7 @@ import java.io.IOException;
 import android.app.Activity;
 import android.content.Intent;
 import android.media.MediaPlayer;
-import android.media.MediaPlayer.OnPreparedListener;
+//import android.media.MediaPlayer.OnPreparedListener;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -13,8 +13,9 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class SongPlayerPopup extends Activity {
-	private MediaPlayer mp;
-	
+	//private MediaPlayer mp;
+	MediaPlayer mp = new MediaPlayer();
+	final String SONGSERVPATH = "http://10.0.2.2/";
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -33,29 +34,29 @@ public class SongPlayerPopup extends Activity {
         shareButton.setOnClickListener(shareButtonListener);
         anotherQuestionButton.setOnClickListener(anotherQuestionButtonListener);
         
-        mp = new MediaPlayer();
-        mp.setOnPreparedListener(onPreparedListener());
+        //mp = new MediaPlayer();
+        //mp.setOnPreparedListener(onPreparedListener());
         
-        try {
-        	mp.setDataSource(QuestionPopup.soapClient.getSongFile());
-        } catch (IllegalArgumentException ex) {
-        	ex.printStackTrace();
-        } catch (IllegalStateException ex) {
-        	ex.printStackTrace();
-        } catch (IOException ex) {
-        	ex.printStackTrace();
-        }
-        try {
-        	mp.prepareAsync();
-        } catch (IllegalStateException ex) {
-        	System.out.println("prepareAsync() throws IllegalStateException");
-        }
+//        try {
+//        	mp.setDataSource(QuestionPopup.soapClient.getSongFile());
+//        } catch (IllegalArgumentException ex) {
+//        	ex.printStackTrace();
+//        } catch (IllegalStateException ex) {
+//        	ex.printStackTrace();
+//        } catch (IOException ex) {
+//        	ex.printStackTrace();
+//        }
+//        try {
+//        	mp.prepareAsync();
+//        } catch (IllegalStateException ex) {
+//        	System.out.println("prepareAsync() throws IllegalStateException");
+//        }
 	}
 	
-	private OnPreparedListener onPreparedListener() {
-		mp.start();
-		return null;
-	}
+//	private OnPreparedListener onPreparedListener() {
+//		mp.start();
+//		return null;
+//	}
 	
 	private OnClickListener shareButtonListener = new OnClickListener() {
 	    public void onClick(View v) {

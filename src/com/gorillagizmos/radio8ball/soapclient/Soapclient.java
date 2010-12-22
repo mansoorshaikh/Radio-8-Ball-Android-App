@@ -7,7 +7,7 @@ import org.ksoap2.transport.HttpTransportSE;
 
 import java.util.*;
 
-public class SoapClient {
+public class Soapclient {
 	
 	private static final String SOAP_ACTION = "urn:r8bwsdl:query";
     private static final String METHOD_NAME = "query";
@@ -20,7 +20,7 @@ public class SoapClient {
     private String songalbum;
     private String songfile;
     
-    public SoapClient() {
+    public Soapclient() {
     	
     }
     

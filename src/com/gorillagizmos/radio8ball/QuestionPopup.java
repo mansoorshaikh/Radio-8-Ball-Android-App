@@ -22,7 +22,7 @@ public class QuestionPopup extends Activity {
 	private float mAccel; // acceleration apart from gravity
 	private float mAccelCurrent; // current acceleration including gravity
 	private float mAccelLast; // last acceleration including gravity
-	public static SoapClient soapClient;
+	public static Soapclient soapClient;
 	private EditText questionInput;
 	private AlertDialog oracleBusyAlert;
 	
@@ -65,7 +65,7 @@ public class QuestionPopup extends Activity {
 			});
         oracleBusyAlert = alertDialogBuilder.create();
         
-        soapClient = new SoapClient();
+        soapClient = new Soapclient();
         
         questionInput = (EditText) findViewById(R.id.question_input);
         Button shakeButton = (Button) findViewById(R.id.shake_button);
