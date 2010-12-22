@@ -15,7 +15,7 @@ import android.widget.TextView;
 public class SongPlayerPopup extends Activity {
 
 	//private MediaPlayer mp;
-	MediaPlayer mp = new MediaPlayer();
+	MediaPlayer mp;
 	final String SONGSERVPATH = "http://10.0.2.2/";
 
 	private Button playPauseButton, shareButton, anotherQuestionButton;
@@ -42,7 +42,14 @@ public class SongPlayerPopup extends Activity {
         anotherQuestionButton.setOnClickListener(anotherQuestionButtonListener);
 
         
-        //mp = new MediaPlayer();
+        mp = new MediaPlayer();
+        try {
+        	mp.setDataSource(SONGSERVPATH+"power.mp3");
+        	mp.prepare();
+        	mp.start();
+        } catch(Exception e) {
+        	
+        }
         //mp.setOnPreparedListener(onPreparedListener());
         
 //        try {
@@ -71,8 +78,12 @@ public class SongPlayerPopup extends Activity {
 		public void onClick(View v) {
 			// Toggle between playing or pausing the song
 			if(playPauseButton.getText() == "Pause") {
+				if(mp.isPlaying()) {
+					mp.pause();
+				}
 				playPauseButton.setText("Play");
 			} else {
+				mp.start();
 				playPauseButton.setText("Pause");
 			}
 		}
