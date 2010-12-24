@@ -2,10 +2,7 @@ package com.gorillagizmos.radio8ball;
 
 import android.app.Activity;
 import android.content.Intent;
-
 import android.media.MediaPlayer;
-//import android.media.MediaPlayer.OnPreparedListener;
-
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -13,10 +10,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class SongPlayerPopup extends Activity {
-
-	//private MediaPlayer mp;
 	MediaPlayer mp;
-	final String SONGSERVPATH = "http://10.0.2.2/";
+	final String SONGSERVPATH = "http://www.radio8ball.com/sites/all/themes/box_grey/upload/song/";
 
 	private Button playPauseButton, shareButton, anotherQuestionButton;
 	
@@ -44,35 +39,13 @@ public class SongPlayerPopup extends Activity {
         
         mp = new MediaPlayer();
         try {
-        	mp.setDataSource(SONGSERVPATH+"power.mp3");
+        	mp.setDataSource(SONGSERVPATH + QuestionPopup.soapClient.getSongFile());
         	mp.prepare();
         	mp.start();
         } catch(Exception e) {
         	
         }
-        //mp.setOnPreparedListener(onPreparedListener());
-        
-//        try {
-//        	mp.setDataSource(QuestionPopup.soapClient.getSongFile());
-//        } catch (IllegalArgumentException ex) {
-//        	ex.printStackTrace();
-//        } catch (IllegalStateException ex) {
-//        	ex.printStackTrace();
-//        } catch (IOException ex) {
-//        	ex.printStackTrace();
-//        }
-//        try {
-//        	mp.prepareAsync();
-//        } catch (IllegalStateException ex) {
-//        	System.out.println("prepareAsync() throws IllegalStateException");
-//        }
 	}
-	
-//	private OnPreparedListener onPreparedListener() {
-//		mp.start();
-//		return null;
-//	}
-
 	
 	private OnClickListener playPauseListener = new OnClickListener() {
 		public void onClick(View v) {
@@ -88,7 +61,6 @@ public class SongPlayerPopup extends Activity {
 			}
 		}
 	};
-
 	
 	private OnClickListener shareButtonListener = new OnClickListener() {
 	    public void onClick(View v) {
